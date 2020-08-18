@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:stevez="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.stevez.camerakit.BinocularCameraTextureView
+            android:id="@+id/camera_textureview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            stevez:cameraDir="auto"
+            stevez:rgbCamera="0"
+            stevez:irCamera="1"
+            stevez:cameraPreviewId="0"
+            stevez:isMirror="false"
+            stevez:previewHeight="480"
+            stevez:previewWidth="640"
+            stevez:scalableType="centerInside"/>
+
+</FrameLayout>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:background="@android:color/white">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="CameraKit"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <ScrollView
+        android:id="@+id/modulesContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="48dp"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_config"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
+                android:text="config" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_binocularcameratextureview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
+                android:text="BinocularCameraTextureView" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_BinocularCameraGLSurfaceView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
+                android:text="BinocularCameraGLSurfaceView" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_CameraTextureView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
+                android:text="CameraTextureView" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_CameraGLSurfaceView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
+                android:text="CameraGLSurfaceView" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_TextureView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
+                android:text="ScaleTextureView" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_GLSurfaceView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
+                android:text="ScaleGLSurfaceView" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_Camera1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
+                android:text="Camera1" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_Camera2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
+                android:text="Camera2" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_UvcCamera"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
+                android:text="UvcCamera" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_TwoPreviewCamera"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
+                android:text="TwoPreviewCamera" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

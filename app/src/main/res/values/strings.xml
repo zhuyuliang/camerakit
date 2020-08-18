@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">camerakit-sample</string>
+    <string name="permission_denied">权限被拒绝</string>
+    <string name="param_config_str">参数设置</string>
+</resources>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:stevez="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.stevez.camerakit.ScaleGLSurfaceView
+            android:id="@+id/camera_textureview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            stevez:cameraDir="up"
+            stevez:isMirror="false"
+            stevez:previewHeight="480"
+            stevez:previewWidth="640"
+            stevez:scalableType="centerInside"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/tv_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:textColor="@color/colorAccent"
+                    />
+
+        </ScrollView>
+
+</FrameLayout>

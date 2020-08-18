@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.stevez.camera.sample">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:name=".App"
+        android:allowBackup="false"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity
+            android:name=".HomeActivity"
+            android:configChanges="keyboard|navigation|keyboardHidden|orientation|screenSize"
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ConfigActivity"
+            android:configChanges="keyboard|navigation|keyboardHidden|orientation|screenSize"/>
+        <activity android:name=".BinocularGLSurfaceActivity"
+            android:configChanges="keyboard|navigation|keyboardHidden|orientation|screenSize"/>
+        <activity android:name=".BinocularTextureViewActivity"
+            android:configChanges="keyboard|navigation|keyboardHidden|orientation|screenSize"/>
+        <activity android:name=".CameraGLSurfaceActivity"
+            android:configChanges="keyboard|navigation|keyboardHidden|orientation|screenSize"/>
+        <activity android:name=".CameraTextureViewActivity"
+            android:configChanges="keyboard|navigation|keyboardHidden|orientation|screenSize"/>
+        <activity android:name=".ScaleGLSurfaceActivity"
+            android:configChanges="keyboard|navigation|keyboardHidden|orientation|screenSize"/>
+        <activity android:name=".ScaleTextureViewActivity"
+            android:configChanges="keyboard|navigation|keyboardHidden|orientation|screenSize"/>
+        <activity android:name=".Camera1Activity"
+            android:configChanges="keyboard|navigation|keyboardHidden|orientation|screenSize"/>
+        <activity android:name=".Camera2Activity"
+            android:configChanges="keyboard|navigation|keyboardHidden|orientation|screenSize"/>
+        <activity android:name=".CameraUvcActivity"
+            android:configChanges="keyboard|navigation|keyboardHidden|orientation|screenSize"/>
+        <activity android:name=".TwoCameraScaleTextureViewActivity"
+            android:configChanges="keyboard|navigation|keyboardHidden|orientation|screenSize"/>
+
+    </application>
+
+</manifest>
