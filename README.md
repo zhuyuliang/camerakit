@@ -1,3 +1,11 @@
+# 介绍
+    中文：
+    1. 用于Android摄像头的通用API。已封装Camera1 Camera2, UvcCamera。
+    2. 封装预览视图，基于CameraApi。已实现TextureView预览、GLSurfaceView预览、双目预览，预览界面可灵活配置图像、缩放、方向等参数。
+    English:
+    1. Common API for Android Camera. Has been encapsulated Camera1 Camera2, UvcCamera. 
+    2. Encapsulate preview View, based on CameraApi. TextureView preview, GLSurfaceView preview, binocular preview can be implemented, and the preview interface can flexibly configure parameters such as image, Scale, and direction.
+
 # 项目架构
 
     ├── app                                         // sample
