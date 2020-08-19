@@ -7,6 +7,8 @@ Author : SteveZ
 ```
 
 ## Sample
+注意：1.UVC摄像头调用需要依赖libuvccamera库
+     2.camerakit的相机部分需要依赖camera库
 
 ### BinocularCameraTextureView / BinocularCameraGLSurfaceView
 

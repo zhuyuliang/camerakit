@@ -7,6 +7,7 @@ Author : SteveZ
 ```
 
 # Sample
+注意：UVC摄像头调用需要依赖libuvccamera库
 
 ```text
 public void openCamera(){
@@ -39,6 +40,28 @@ public void openCamera(){
                 }));
         mInstance.openCamera();
 }
+```
+
+```text
+通过CameraManager.getInstance()可以配置调用的摄像头和摄像头的调用方式
+1.Camera1的调用方式:
+CameraManager.getInstance(
+                new CameraFacing.Builder().setFacingType(FacingType.OTHER)
+                        .setCameraId(0).build(),
+                CameraApiType.CAMERA1, getBaseContext())
+2.Camera2的调用方式:
+CameraManager.getInstance(
+                new CameraFacing.Builder().setFacingType(FacingType.OTHER)
+                        .setCameraId(0).build(),
+                CameraApiType.CAMERA2, getBaseContext(),new Handler(getMainLooper()),Camera2Activity.this.getLifecycle());
+3.UvcCamera的调用方式:
+CameraManager.getInstance(
+                new CameraFacing.Builder().setFacingType(FacingType.UVC)
+                        .setCameraId(123)
+                        .setVendorId(ConstantsConfig.getInstance().getVid())
+                        .setProductId(ConstantsConfig.getInstance().getPid()).build(),
+                CameraApiType.CAMERAUVC, getBaseContext(),new Handler(getMainLooper()),CameraUvcActivity.this.getLifecycle());
+注意：UVC摄像头调用需要依赖libuvccamera库
 ```
 
 -----
