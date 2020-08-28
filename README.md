@@ -22,6 +22,7 @@
 
 ![main_page](captures/main_page.png)
 ![camera_demo](captures/camera_demo.jpeg)
+![camera_demo](captures/screen.png)
     
 ## API
     
