@@ -105,6 +105,14 @@ public class CameraUvc extends CameraApi {
                         callBackEvents.onCameraClose();
                     }
                 }
+
+                @Override
+                public void onUsbCameraError(String msg) {
+                    camera.closeCamera();
+                    if (callBackEvents != null) {
+                        callBackEvents.onCameraError(msg);
+                    }
+                }
             });
 
             if (callBackEvents != null) {

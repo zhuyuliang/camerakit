@@ -91,6 +91,34 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="摄像头WIDTH" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="摄像头WIDTH"
+                android:inputType="number"
+                android:text="640"
+                android:id="@+id/edit_width"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="摄像头HEIGHT" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="摄像头HEIGHT"
+                android:inputType="number"
+                android:text="480"
+                android:id="@+id/edit_height"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:text="RGB摄像头ID" />
 
             <androidx.appcompat.widget.AppCompatEditText

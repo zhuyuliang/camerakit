@@ -4,12 +4,15 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.SurfaceTexture;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.TextureView;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.blankj.utilcode.util.LogUtils;
 import com.stevez.camera.CallBackEvents;
 import com.stevez.camera.CameraApiType;
 import com.stevez.camera.CameraFacing;
@@ -26,36 +29,48 @@ import com.stevez.camera.IAttributes;
  */
 public class Camera1Activity extends AppCompatActivity implements TextureView.SurfaceTextureListener {
 
+    public static final String TAG = "Camera1Activity";
+
     private TextureView mTextureView;
     private CameraManager mInstance;
+    private TextView textView;
+    private ImageView img_back;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camera);
         mTextureView = findViewById(R.id.textureview);
+        textView = findViewById(R.id.txt_title);
+        img_back = findViewById(R.id.img_back);
+        textView.setText("Camera1");
+        img_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
         mTextureView.setSurfaceTextureListener(this);
     }
 
     private void openCamera(SurfaceTexture surface) {
-        Log.d("TAG", "openCamera");
         mInstance = CameraManager.getInstance(
                 new CameraFacing.Builder().setFacingType(FacingType.OTHER)
-                        .setCameraId(0).build(),
+                        .setCameraId(ConstantsConfig.getInstance().getRgbCamereId()).build(),
                 CameraApiType.CAMERA1, getBaseContext());
         mInstance.setCallBackEvents(
                 (new CallBackEvents() {
                     @Override
                     public void onCameraOpen(IAttributes cameraAttributes) {
-                        Log.e("TAGCAMERA", "onCameraOpen");
-                        mInstance.setPhotoSize(new CameraSize(ConstantsConfig.sPreviewWidth,ConstantsConfig.sPreviewHeight));
-                        mInstance.setPreviewSize(new CameraSize(ConstantsConfig.sPreviewWidth,ConstantsConfig.sPreviewHeight));
+                        LogUtils.e(TAG, "onCameraOpen");
+                        mInstance.setPhotoSize(new CameraSize(ConstantsConfig.getInstance().getWidth(), ConstantsConfig.getInstance().getHeight()));
+                        mInstance.setPreviewSize(new CameraSize(ConstantsConfig.getInstance().getWidth(), ConstantsConfig.getInstance().getHeight()));
                         mInstance.setPreviewOrientation(ConstantsConfig.getInstance().getFaceOri().getValue() * 90);
                         mInstance.setExposureCompensation(0);
                         mInstance.addPreviewCallbackWithBuffer(new CameraPreviewCallback() {
                             @Override
                             public void onCallBackPreview(byte[] data) {
-                                Log.e("TAGCAMERA", "onCallBackPreview");
+                                LogUtils.e(TAG, "onCallBackPreview");
                             }
                         });
                         mInstance.startPreview(surface);
@@ -63,27 +78,27 @@ public class Camera1Activity extends AppCompatActivity implements TextureView.Su
 
                     @Override
                     public void onCameraClose() {
-                        Log.e("TAGCAMERA", "onCameraClose");
+                        LogUtils.e(TAG, "onCameraClose");
                     }
 
                     @Override
                     public void onCameraError(String errorMsg) {
-                        Log.e("TAGCAMERA", "onCameraError");
+                        LogUtils.e(TAG, "onCameraError");
                     }
 
                     @Override
                     public void onPreviewStarted() {
-                        Log.e("TAGCAMERA", "onPreviewStarted");
+                        LogUtils.e(TAG, "onPreviewStarted");
                     }
 
                     @Override
                     public void onPreviewStopped() {
-                        Log.e("TAGCAMERA", "onPreviewStopped");
+                        LogUtils.e(TAG, "onPreviewStopped");
                     }
 
                     @Override
                     public void onPreviewError(String errorMsg) {
-                        Log.e("TAGCAMERA", "onPreviewError");
+                        LogUtils.e(TAG, "onPreviewError");
                     }
                 }));
         mInstance.openCamera();
@@ -91,7 +106,7 @@ public class Camera1Activity extends AppCompatActivity implements TextureView.Su
 
     @Override
     public void onSurfaceTextureAvailable(SurfaceTexture surface, int width, int height) {
-        Log.e("TAGCAMERA", "onSurfaceTextureAvailable");
+        LogUtils.e(TAG, "onSurfaceTextureAvailable");
         openCamera(surface);
     }
 

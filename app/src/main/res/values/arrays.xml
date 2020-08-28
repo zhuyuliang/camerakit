@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="scaleTypes">
+        <item>none</item>
+        <item>fitXY</item>
+        <item>fitStart</item>
+        <item>fitCenter</item>
+        <item>fitEnd</item>
+        <item>leftTop</item>
+        <item>leftCenter</item>
+        <item>leftBottom</item>
+        <item>centerTop</item>
+        <item>center</item>
+        <item>centerBottom</item>
+        <item>rightTop</item>
+        <item>rightCenter</item>
+        <item>rightBottom</item>
+        <item>leftTopCrop</item>
+        <item>leftCenterCrop</item>
+        <item>leftBottomCrop</item>
+        <item>centerTopCrop</item>
+        <item>centerCrop</item>
+        <item>centerBottomCrop</item>
+        <item>rightTopCrop</item>
+        <item>rightCenterCrop</item>
+        <item>rightBottomCrop</item>
+        <item>startInside</item>
+        <item>centerInside</item>
+        <item>endInside</item>
+    </string-array>
+</resources>

@@ -18,9 +18,6 @@ public class ConstantsConfig {
     private static boolean isDebug;
     private static Application sApplicationContext = null;
 
-    public static final int sPreviewWidth = 640;
-    public static final int sPreviewHeight = 480;
-
     private SharedPreferences sp;
 
     private static ConstantsConfig config;
@@ -70,6 +67,27 @@ public class ConstantsConfig {
             return Direction.DOWN;
         }
         return Direction.AUTO;
+    }
+
+    /**
+     * 宽高
+     *
+     * @param param
+     */
+    public void setWidth(int param) {
+        sp.edit().putInt("width", param).commit();
+    }
+
+    public int getWidth() {
+        return sp.getInt("width", 640);
+    }
+
+    public void setHeight(int param) {
+        sp.edit().putInt("height", param).commit();
+    }
+
+    public int getHeight() {
+        return sp.getInt("height", 480);
     }
 
     /**

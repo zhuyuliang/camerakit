@@ -18,6 +18,11 @@
     ├── libuvccamera                                // uvccamera辅助能力
     ├── repositories                                // 打包默认发版文件夹
     
+## 截图
+
+![main_page](captures/main_page.png)
+![camera_demo](captures/camera_demo.jpeg)
+    
 ## API
     
 ### [camera API](./camera/README.md)

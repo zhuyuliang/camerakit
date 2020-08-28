@@ -195,19 +195,20 @@ public class Camera2 extends CameraApi {
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     public synchronized void release() {
-        if (mCameraDevice != null) {
-            mCameraDevice.close();
-            mCameraDevice = null;
+        cameraHandler.removeCallbacksAndMessages(null);
+        if (imageReader != null) {
+            imageReader.close();
+            imageReader = null;
         }
         if (mCaptureSession != null) {
             mCaptureSession.close();
             mCaptureSession = null;
         }
-        mCameraAttributes = null;
-        if (imageReader != null) {
-            imageReader.close();
-            imageReader = null;
+        if (mCameraDevice != null) {
+            mCameraDevice.close();
+            mCameraDevice = null;
         }
+        mCameraAttributes = null;
         previewStarted = false;
         if (callBackEvents != null) {
             callBackEvents.onCameraClose();

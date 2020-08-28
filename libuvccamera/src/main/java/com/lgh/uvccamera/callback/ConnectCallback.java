@@ -43,4 +43,11 @@ public interface ConnectCallback {
      */
     void onDetached(UsbDevice usbDevice);
 
+    /**
+     * 检查设备错误
+     *
+     * @param msg
+     */
+    void onUsbCameraError(String msg);
+
 }

@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:stevez="http://schemas.android.com/apk/res-auto"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="10"
-        android:orientation="horizontal">
+    xmlns:stevez="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+        <include layout="@layout/layout_title_bar" />
 
         <com.stevez.camerakit.ScaleTextureView
             android:id="@+id/camera_textureview1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_height="0dp"
             android:layout_weight="5"
             stevez:cameraDir="up"
             stevez:isMirror="false"
@@ -19,9 +21,10 @@
 
         <com.stevez.camerakit.ScaleTextureView
             android:id="@+id/camera_textureview2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
             android:layout_weight="5"
+            android:layout_gravity="center"
             stevez:cameraDir="up"
             stevez:isMirror="false"
             stevez:previewHeight="480"

@@ -69,6 +69,12 @@ public class UsbMonitor implements IMonitor {
     @Override
     public void checkDevice() {
         List<UsbDevice> usbDevices = getUsbCameraDevice();
+        if (usbDevices == null || usbDevices.size() == 0) {
+            if (mConnectCallback != null) {
+                mConnectCallback.onUsbCameraError("USB Camera is Empty！");
+            }
+            return;
+        }
         for (int i = 0; i < usbDevices.size(); i++) {
             if (isTargetDevice(usbDevices.get(i)) && mConnectCallback != null) {
                 mConnectCallback.onAttached(usbDevices.get(i));
